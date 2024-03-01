@@ -6,17 +6,24 @@ import Footer from './components/common/Footer'
 import InicioPrincipal from './components/pages/InicioPrincipal'
 import Administrador from './components/pages/Administrador'
 import Error404 from './components/pages/Error404';
-
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 function App() {
  
   return (
-    <>
-      <Menu></Menu>
-      {/* <InicioPrincipal></InicioPrincipal> */}
-      <Administrador></Administrador>
-      {/* <Error404></Error404> */}
-      <Footer></Footer>
-    </>
+    //BrowserRouter es un componente que en el medio necesita un listado de rutas- es un enrutador
+    //Routes para definir un listado de rutas
+    //Route es la ruta    
+    <BrowserRouter> 
+    <Menu></Menu>
+    <Routes>
+      <Route exact path='/' element={<InicioPrincipal></InicioPrincipal>}> </Route>
+      <Route exact path='/administrador' element={<Administrador></Administrador>}> </Route>
+      <Route exact path='/administrador/crear' element={<Administrador></Administrador>}> </Route>
+      <Route exact path='/administrador/editar' element={<Administrador></Administrador>}> </Route>
+      <Route  path='*' element={<Error404></Error404>}> </Route>
+    </Routes>
+    <Footer></Footer>
+    </BrowserRouter>
   )
 }
 
