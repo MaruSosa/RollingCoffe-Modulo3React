@@ -13,17 +13,18 @@ function App() {
     //BrowserRouter es un componente que en el medio necesita un listado de rutas- es un enrutador
     //Routes para definir un listado de rutas
     //Route es la ruta    
-    <BrowserRouter> 
+    <BrowserRouter>
     <Menu></Menu>
     <Routes>
-      <Route exact path='/' element={<InicioPrincipal></InicioPrincipal>}> </Route>
-      <Route exact path='/administrador' element={<Administrador></Administrador>}> </Route>
-      <Route exact path='/administrador/crear' element={<Administrador></Administrador>}> </Route>
-      <Route exact path='/administrador/editar' element={<Administrador></Administrador>}> </Route>
-      <Route  path='*' element={<Error404></Error404>}> </Route>
+      <Route exact path="/" element={<Inicio></Inicio>}></Route>
+      <Route exact path="/detalleProducto" element={<DetalleProducto></DetalleProducto>}></Route>
+      <Route exact path="/administrador" element={<Administrador></Administrador>}></Route>
+      <Route exact path="/administrador/crear" element={<FormularioProducto></FormularioProducto>}></Route>
+      <Route exact path="/administrador/editar" element={<Administrador></Administrador>}></Route>
+      <Route path="*" element={<Error404></Error404>}></Route>
     </Routes>
     <Footer></Footer>
-    </BrowserRouter>
+  </BrowserRouter>
   )
 }
 
